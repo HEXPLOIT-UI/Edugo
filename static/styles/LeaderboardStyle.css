@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+body {
+  background-color: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+section .leaderboard {
+    top: 8%;
+    position: absolute;
+    width: 60%;
+    background: #fff;  
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px #d8d7d7;
+}
+section .leaderboard .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Стиль для ячеек таблицы */
+  .table td, .table th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Стиль для заголовков столбцов */
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Стиль для четных строк */
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Стиль для нечетных строк */
+  .table tr:nth-child(odd) {
+    background-color: #fff;
+  }

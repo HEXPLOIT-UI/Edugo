@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/RegistrationPageStyle.css') }}">
+</head>
+<body>
+    <section>
+        <div class="signin">
+            <div class="content">
+                <h1 style="margin-bottom: 15px;">Авторизация</h1>
+                <div class="links">
+                    <p>Нет аккаунта?
+                        <a href="/register">Зарегистрируйтесь сейчас</a>
+                    </p>
+                </div>
+                <div class="separator">
+                    <div class="line"></div>
+                    <span style="color: #777373;">Или</span>
+                    <div class="line"></div>
+                  </div>
+                  {% if error %}
+                  <p style="color: red;text-align: center;">{{ error }}</p>
+                  {% endif %}                         
+                <div class="form">
+                    <form method="POST">
+                        <div class="inputBox">
+                            <input type="text" id="username" name="username" required><i>Логин</i><br>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="password" name="password" required><i>Пароль</i><br>
+                        </div>
+                        <div class="links">
+                            <a style="color: #777373;font-weight: normal; text-decoration: underline;" href="/recovery">Забыли пароль?</a>
+                        </div>
+                        <div class="inputBox">
+                            <input style="border-radius: 15px;" type="submit" name="login" value="Войти">
+                        </div>
+                    </form>
+                    <div class="links">
+                        <a style="text-decoration: underline;color: rgb(138, 138, 138);" href="/">На главную</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

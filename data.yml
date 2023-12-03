@@ -1,0 +1,281 @@
+GamesList:
+  ZYBYL5:
+    complete: true
+    leaderboard:
+      Alexx:
+        complete: true
+        end-time: 1701501525374
+        score: 37
+        start-time: 1701501447604
+        tasks:
+          task-1:
+            answer: answer-3
+            cache: false
+          task-10:
+            answer: answer-3
+            cache: true
+          task-11:
+            answer: answer-3
+            cache: true
+          task-12:
+            answer: answer-3
+            cache: false
+          task-2:
+            answer: answer-1
+            cache: false
+          task-3:
+            answer: answer-3
+            cache: true
+          task-4:
+            answer: answer-4
+            cache: true
+          task-5:
+            answer: '1'
+            cache: false
+          task-6:
+            answer: answer-3
+            cache: true
+          task-7:
+            answer: answer-3
+            cache: true
+          task-8:
+            answer: answer-3
+            cache: true
+          task-9:
+            answer: '1'
+            cache: false
+    name: "\u0417\u0435\u0440\u043D\u043E \u0438 \u043F\u0440\u043E\u0434\u0443\u043A\
+      \u0442\u044B \u0435\u0433\u043E  \u043F\u0435\u0440\u0435\u0440\u0430\u0431\u043E\
+      \u0442\u043A\u0438"
+    owner: admin
+    tasks:
+      task-1:
+        answers:
+          answer-1:
+            correct: true
+            name: "\u041F\u0448\u0435\u043D\u0438\u0446\u0430"
+          answer-2:
+            correct: false
+            name: "\u0420\u0438\u0441"
+          answer-3:
+            correct: false
+            name: "\u041F\u0448\u0435\u043D\u043E"
+          answer-4:
+            correct: false
+            name: "\u0420\u043E\u0436\u044C"
+        name: "\u041A\u0430\u043A\u0438\u0435 \u0437\u0435\u0440\u043D\u043E\u0432\
+          \u044B\u0435 \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u044B \u0441\u0430\
+          \u043C\u044B\u0435 \u0440\u0430\u0441\u043F\u0440\u043E\u0441\u0442\u0440\
+          \u0430\u043D\u0435\u043D\u043D\u044B\u0435 \u0432 \u043C\u0438\u0440\u0435\
+          ?"
+        score: '5'
+        type: checkboxs
+      task-10:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u041C\u0430\u043D\u043D\u0430\u044F"
+          answer-2:
+            correct: false
+            name: "\u041F\u0448\u0435\u043D\u043E"
+          answer-3:
+            correct: true
+            name: "\u041F\u043E\u043B\u0442\u0430\u0432\u0441\u043A\u0430\u044F"
+          answer-4:
+            correct: false
+            name: "\u0420\u0438\u0441\u043E\u0432\u0430\u044F"
+        name: "\u041A\u0430\u043A\u0438\u0435 \u043A\u0440\u0443\u043F\u044B \u043F\
+          \u043E\u0434\u0440\u0430\u0437\u0434\u0435\u043B\u044F\u044E\u0442 \u043D\
+          \u0430 \u043D\u043E\u043C\u0435\u0440\u0430?"
+        score: 5
+        type: quizz
+      task-11:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u041C\u0438\u043E\u0437\u0438\u043D"
+          answer-2:
+            correct: false
+            name: "\u041A\u0430\u0437\u0435\u0438\u043D"
+          answer-3:
+            correct: true
+            name: "\u0413\u043B\u0438\u0430\u0434\u0438\u043D"
+          answer-4:
+            correct: false
+            name: "\u041C\u0438\u043E\u0433\u043B\u043E\u0431\u0438\u043D"
+        name: "\u041A\u0430\u043A\u043E\u0439 \u0431\u0435\u043B\u043E\u043A \u0441\
+          \u043E\u0434\u0435\u0440\u0436\u0438\u0442 \u043F\u0448\u0435\u043D\u0438\
+          \u0447\u043D\u0430\u044F \u043C\u0443\u043A\u0430?"
+        score: 5
+        type: quizz
+      task-12:
+        answers:
+          answer-1:
+            correct: true
+            name: "\u0420\u043E\u0436\u043A\u0438"
+          answer-2:
+            correct: false
+            name: "\u0412\u0435\u0440\u043C\u0438\u0448\u0435\u043B\u044C"
+          answer-3:
+            correct: false
+            name: "\u041B\u0430\u043F\u0448\u0430"
+          answer-4:
+            correct: false
+            name: "\u0411\u0430\u043D\u0442\u0438\u043A\u0438"
+        name: "\u041D\u0430\u0437\u0432\u0430\u0442\u044C \u043F\u043E\u0434\u0442\
+          \u0438\u043F\u044B \u0442\u0440\u0443\u0431\u0447\u0430\u0442\u044B\u0445\
+          \ \u043C\u0430\u043A\u0430\u0440\u043E\u043D\u043D\u044B\u0445 \u0438\u0437\
+          \u0434\u0435\u043B\u0438\u0439"
+        score: 5
+        type: quizz
+      task-2:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u0420\u043E\u0436\u044C"
+          answer-2:
+            correct: false
+            name: "\u0420\u0438\u0441"
+          answer-3:
+            correct: false
+            name: "\u0421\u043E\u044F"
+          answer-4:
+            correct: true
+            name: "\u042F\u0447\u043C\u0435\u043D\u044C"
+        name: "\u041A\u0430\u043A\u0430\u044F \u0437\u0435\u0440\u043D\u043E\u0432\
+          \u0430\u044F \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u0430 \u0438\u0441\
+          \u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\u0441\u044F \u043F\u0440\
+          \u0438 \u043F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\
+          \u0435 \u043F\u0438\u0432\u0430?"
+        score: 5
+        type: quizz
+      task-3:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u041F\u0448\u0435\u043D\u0438\u0446\u0430"
+          answer-2:
+            correct: false
+            name: "\u0420\u0438\u0441"
+          answer-3:
+            correct: true
+            name: "\u0421\u043E\u044F"
+          answer-4:
+            correct: false
+            name: "\u0413\u0440\u0435\u0447\u043A\u0430"
+        name: "\u041A\u0430\u043A\u0430\u044F  \u0437\u0435\u0440\u043D\u043E\u0432\
+          \u0430\u044F \u043A\u0443\u043B\u044C\u0442\u0443\u0440\u0430 \u0441\u043E\
+          \u0434\u0435\u0440\u0436\u0438\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\
+          \u0430\u043B\u044C\u043D\u043E\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\
+          \u0441\u0442\u0432\u043E \u0431\u0435\u043B\u043A\u0430?"
+        score: 5
+        type: quizz
+      task-4:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u042F\u0447\u043D\u0435\u0432\u0443\u044E"
+          answer-2:
+            correct: false
+            name: "\u041F\u0448\u0435\u043D\u0438\u0447\u0435\u0443\u044E"
+          answer-3:
+            correct: false
+            name: "\u041F\u0435\u0440\u043B\u043E\u0432\u0443\u044E"
+          answer-4:
+            correct: true
+            name: "\u041C\u0430\u043D\u043D\u0443\u044E"
+        name: "\u041A\u0430\u043A\u0438\u0435 \u043A\u0440\u0443\u043F\u044B \u043F\
+          \u0440\u043E\u0438\u0437\u0432\u043E\u0434\u044F\u0442 \u0438\u0437 \u043F\
+          \u0448\u0435\u043D\u0438\u0446\u044B?"
+        score: '7'
+        type: checkboxs
+      task-5:
+        answer: "\u0413\u043B\u0438\u0430\u0434\u0438\u043D"
+        name: "\u041A\u0430\u043A\u043E\u0439 \u0431\u0435\u043B\u043E\u043A \u0441\
+          \u043E\u0434\u0435\u0440\u0436\u0438\u0442 \u043F\u0448\u0435\u043D\u0438\
+          \u0447\u043D\u0430\u044F \u043C\u0443\u043A\u0430?"
+        score: '10'
+        type: tests
+      task-6:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u0412\u043B\u0430\u0436\u043D\u043E\u0441\u0442\u044C"
+          answer-2:
+            correct: false
+            name: "\u0417\u043E\u043B\u044C\u043D\u043E\u0441\u0442\u044C"
+          answer-3:
+            correct: true
+            name: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0438\
+              \ \u0446\u0432\u0435\u0442 \u043E\u0431\u043E\u043B\u043E\u0447\u0435\
+              \u043A"
+          answer-4:
+            correct: false
+            name: "\u041A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u043A\
+              \u043B\u0435\u0439\u043A\u043E\u0432\u0438\u043D\u044B"
+        name: "\u0427\u0442\u043E \u0432\u043B\u0438\u044F\u0435\u0442 \u043D\u0430\
+          \ \u0446\u0432\u0435\u0442 \u043C\u0443\u043A\u0438?"
+        score: 5
+        type: quizz
+      task-7:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u041A\u0440\u0443\u043F\u0447\u0430\u0442\u043A\u0430"
+          answer-2:
+            correct: false
+            name: "\u0421\u0435\u044F\u043D\u043D\u0430\u044F"
+          answer-3:
+            correct: true
+            name: "\u041E\u0431\u043E\u0439\u043D\u0430\u044F"
+          answer-4:
+            correct: false
+            name: "\u041F\u0435\u0440\u0432\u044B\u0439 \u0441\u043E\u0440\u0442"
+        name: "\u041A\u0430\u043A\u043E\u0439 \u043E\u0431\u0449\u0438\u0439 \u0442\
+          \u043E\u0432\u0430\u0440\u043D\u044B\u0439 \u0441\u043E\u0440\u0442 \u0438\
+          \u043C\u0435\u0435\u0442 \u043C\u0443\u043A\u0430 \u043F\u0448\u0435\u043D\
+          \u0438\u0447\u043D\u0430\u044F \u0438 \u043C\u0443\u043A\u0430 \u0440\u0436\
+          \u0430\u043D\u0430\u044F?"
+        score: 5
+        type: quizz
+      task-8:
+        answers:
+          answer-1:
+            correct: false
+            name: "\u0421\u043E\u043B\u044C"
+          answer-2:
+            correct: false
+            name: "\u0421\u0430\u0445\u0430\u0440"
+          answer-3:
+            correct: true
+            name: "\u042F\u0438\u0447\u043D\u044B\u0435 \u043F\u0440\u043E\u0434\u0443\
+              \u043A\u0442\u044B"
+          answer-4:
+            correct: false
+            name: "\u041C\u0443\u043A\u0430"
+        name: "\u041A\u0430\u043A\u0438\u0435 \u0434\u043E\u0431\u0430\u0432\u043A\
+          \u0438 \u0443\u043B\u0443\u0447\u0448\u0430\u044E\u0442 \u0431\u0438\u043E\
+          \u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0443\u044E \u0446\u0435\
+          \u043D\u043D\u043E\u0441\u0442\u044C \u043C\u0430\u043A\u0430\u0440\u043E\
+          \u043D\u043D\u044B\u0445  \u0438\u0437\u0434\u0435\u043B\u0438\u0439?"
+        score: 5
+        type: quizz
+      task-9:
+        answer: "\u0411\u043E\u0440\u043E\u0434\u0438\u043D\u0441\u043A\u0438\u0439"
+        name: "\u041A\u0430\u043A\u043E\u0439 \u0445\u043B\u0435\u0431 \u043F\u043E\
+          \u0441\u044B\u043F\u0430\u044E\u0442 \u043A\u043E\u0440\u0438\u0430\u043D\
+          \u0434\u0440\u043E\u043C(\u0442\u043C\u0438\u043D\u043E\u043C)"
+        score: '10'
+        type: tests
+Users:
+  Alexx:
+    email: alex@gmail.com
+    fullname: "\u0410\u043B\u0435\u043A\u0441"
+    password: '321321'
+    role: "\u0443\u0447\u0430\u0441\u0442\u043D\u0438\u043A"
+  admin:
+    email: admin@edugo.com
+    fullname: "\u0410\u0434\u043C\u0438\u043D\u0438\u0441\u0442\u0440\u0430\u0442\u043E\
+      \u0440"
+    password: '123123'
+    role: "\u0423\u0447\u0438\u0442\u0435\u043B\u044C"

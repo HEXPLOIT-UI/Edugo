@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*
+{
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+body {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+
+FOOTER (NAVBAR)!!!!!!!!!!!!!!!!!
+
+*/
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  color: black;
+  padding: 25px 0;
+}
+
+.section {
+  width: 10%;
+  margin-right: 5%;
+  padding: 4px;
+  text-align: center;
+}
+
+.section-left {
+  margin-right: 7%;
+}
+
+.section-right {
+  margin-left: 7%;
+}
+
+.navbar a {
+  padding: 15px;
+  color: black
+}
+
+.bold {
+  left: 15%;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.semi-bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar a[type="link"] {
+  position: relative;
+  padding: 10px;
+  text-decoration: none;
+  color: #383636;
+  transition: color 0.3s ease;
+}
+
+a[type="link"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #0079eb;
+  transition: width 0.3s ease, opacity 0.3s ease; 
+  transform-origin: right;
+  opacity: 0;
+}
+
+a[type="link"]:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+
+a[type="link"]:hover {
+  color: #0079eb
+}
+
+a[type="link"]:not(:hover)::before {
+  width: 0;
+  opacity: 0;
+}
+
+a[type="link"]:active {
+  opacity: 0.5;
+}
+
+.navbar a[type="button"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0079eb;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+a[type="button"]:hover {
+  transform: translateY(2px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+/*
+
+CONTENT MAIN!!!!!!!!!!!!!!!!!!!!
+
+*/
+.border-line {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 15vh;
+}
+
+.container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.container h2 {
+  
+}
+
+.container img {
+  margin-bottom: 5%;
+}
+
+.container .box {
+  width: 500px;
+  height: 500px;
+  background-color:#0079eb;
+  border-radius: 15px;
+  margin: 40px;
+  text-align: center;
+  line-height: 100px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.container .box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.container .box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.container .box:hover::before {
+  transform: scale(1.8);
+  opacity: 1;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0079eb;
+  background: #0079eb;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: translateY(0px);
+  box-shadow: 0px 5px 10px #91b6d8;
+}
+
+/*
+
+FOOTER!!!!!!!!!!!!!!!!!!!!!!!
+
+*/
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px; 
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2vh;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание {{task_number}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/ConstructionStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                 alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Конструктор</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">Удалить</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="creation">
+            <div class="content">
+                <div class="form">
+                <form method="post" enctype="multipart/form-data">
+                    <p style="font-weight: bold;text-align: center;">Задание №{{task_number}}</p><br>
+                    {% if task_type == 'task_type_test' %}
+                        <label for="example_field">Вопрос</label><br>
+                        <input type="text" name="example_field" required ><br>
+                        <label for="answer_field">Ответ</label><br>
+                        <input type="text" name="answer_field" required><br>
+                        <label for="score_field">Балл</label><br>
+                        <input type="text" name="score_field" required><br><br>
+                        <input type="file" name="file">
+                        <button mode="button" type="submit" id="save-task-button-test" name="save-task-button-test" value="None">Сохранить</button>
+                    {% endif %}
+                    {% if task_type == 'task_type_quizz' %}
+                        <label for="example_field">Вопрос</label><br>
+                        <input type="text" name="example_field" required ><br>
+                        <br><div class="quiz-box">
+                            <input id="1" class="quiz-button" type="text" placeholder="Введите ответ" name="quizButton-1" required>
+                        </div><br>
+                        <label for="score_field">Балл</label><br>
+                        <input type="text" name="score_field" required><br><br>
+                        <input type="file" name="file"><br>
+                        <div class="buttonBox">
+                            <button mode="button" type="button" id="add-input-button">Добавить ответ</button>
+                            <button mode="button" type="button" id="remove-input-button">Убрать ответ</button>
+                            <button mode="button" type="button" id="choose-input-button">Указать правильный ответ</button>
+                            <button mode="button" type="submit" id="save-task-button-quizz" name="save-task-button-quizz" value="None">Сохранить</button>
+                        </div>
+                    {% endif %}
+                    {% if task_type == 'task_type_checkboxs' %}
+                        <label for="example_field">Вопрос</label><br>
+                        <input type="text" name="example_field" required><br>
+                        <label for="score_field">Балл</label><br>
+                        <input type="text" name="score_field" required><br><br>
+                        <div id="checkbox-container">
+                            <div class="checkbox-row" id="1">
+                              <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox-input">
+                              </label>
+                              <input type="checkboxlabel" class="input-label" placeholder="Вариант ответа">
+                            </div>
+                          </div><br>
+                          <div class="buttonBox">  
+                            <button mode="button" type="button" id="add-checkbox-button">Добавить</button>
+                            <button mode="button" type="button" id="remove-checkbox-button">Убрать</button>
+                            <button mode="button" type="button" id="save-checkbox-button">Сохранить</button>
+                            <button mode="button" type="submit" id="save-task-button-checkboxs" name="save-task-button-checkboxs" value="None">Отправить</button>
+                          </div>
+                    {% endif %}
+                    {% if not task_type %}
+                        <p style="text-align: center;font-weight: bold;">Выберите тип задания</p><br>
+                            <div class="buttonBox">
+                                <button mode="button" type="submit" name="task_type_test" value="pressed">Вопрос - ответ</button> 
+                                <button mode="button" type="submit" name="task_type_quizz" value="pressed">Викторина</button>  
+                                <button mode="button" type="submit" name="task_type_checkboxs" value="pressed">Тесты</button><br><br>
+                                <button mode="button" type="submit" name="create_game_button" value="pressed">Завершить</button>   
+                            </div>
+                    {% endif %}
+                </form>
+            </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById("add-input-button").addEventListener("click", function() {
+            const newInput = document.createElement("input");
+            const quizContainer = document.querySelector(".quiz-box");
+            const lastInput = quizContainer.querySelector("input:last-child");
+            var lastInputCount = quizContainer.querySelectorAll("input").length;
+            if (lastInputCount >= 4) {
+                alert("нельзя добавить больше 4 ответов");
+                return;
+            }
+            var newId = parseInt(lastInput.id) + 1;
+            newInput.type = "text";
+            newInput.id = newId;
+            newInput.name = "quizButton-" + newId;
+            newInput.className = "quiz-button";
+            newInput.placeholder = "Введите ответ";
+            newInput.required = true;
+            document.querySelector(".quiz-box").appendChild(newInput);
+        });
+        document.getElementById("remove-input-button").addEventListener("click", function() {
+            const quizContainer = document.querySelector(".quiz-box");
+            const lastInput = quizContainer.querySelector("input:last-child");
+            var lastInputCount = quizContainer.querySelectorAll("input").length;
+            if (lastInputCount <= 1) {
+                alert("нельзя удалить последнее задание");
+                return;
+            }
+            if (lastInput) {
+                quizContainer.removeChild(lastInput);
+            }
+        });
+        document.getElementById("choose-input-button").addEventListener("click", function() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "block";
+            var answerInputs = document.querySelectorAll(".quiz-button");
+            answerInputs.forEach(function(input) {
+                input.addEventListener("click", function() {
+                    document.getElementById("save-task-button-quizz").setAttribute('value', input.id);
+                    document.getElementById("overlay").style.display = "none";
+                });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById("add-checkbox-button").addEventListener("click", function() {
+          var checkboxContainer = document.getElementById("checkbox-container");
+          var lastCheckboxRow = checkboxContainer.querySelector("div:last-child");
+          var newCheckboxRow = document.createElement("div");
+          var Count = checkboxContainer.querySelectorAll("div").length;
+          if (Count >= 10) {
+            alert("Допустимое количество вариантов ответов - 10");
+            return;
+          }
+          newCheckboxRow.className = "checkbox-row";
+          newCheckboxRow.setAttribute('id', parseInt(lastCheckboxRow.getAttribute('id')) + 1);
+          var newLabel = document.createElement("label");
+          newLabel.className = "checkbox-label";
+          var newCheckbox = document.createElement("input");
+          newCheckbox.type = "checkbox";
+          newCheckbox.className = "checkbox-input";
+          newLabel.appendChild(newCheckbox);
+    
+          var newInput = document.createElement("input");
+          newInput.type = "checkboxlabel";
+          newInput.className = "input-label";
+          newInput.placeholder = "Вариант ответа";
+    
+          newCheckboxRow.appendChild(newLabel);
+          newCheckboxRow.appendChild(newInput);
+          checkboxContainer.appendChild(newCheckboxRow);
+        });
+        document.getElementById("remove-checkbox-button").addEventListener("click", function() {
+            var checkboxContainer = document.getElementById("checkbox-container");
+            var Count = checkboxContainer.querySelectorAll("div").length;
+            if (Count <= 1) {
+                alert("Минимальное количество вариантов должно быть равно 1");
+                return;
+            }
+            var lastCheckboxRow = checkboxContainer.lastChild;
+            if (lastCheckboxRow) {
+                checkboxContainer.removeChild(lastCheckboxRow);
+            }
+        });
+        document.getElementById("save-checkbox-button").addEventListener("click", function() {
+            var checkboxRows = document.querySelectorAll(".checkbox-row");
+            var checkboxData = [];
+            checkboxRows.forEach(function(checkboxRow) {
+                var checkbox = checkboxRow.querySelector(".checkbox-input");
+                var inputLabel = checkboxRow.querySelector(".input-label");
+                checkboxData.push({
+                    id: checkboxRow.getAttribute('id'),
+                    checked: checkbox.checked,
+                    label: inputLabel.value
+                });
+            });
+            console.log(checkboxData);
+            document.getElementById("save-task-button-checkboxs").setAttribute('value', JSON.stringify(checkboxData));
+        });
+      </script>
+</body>
+</html>

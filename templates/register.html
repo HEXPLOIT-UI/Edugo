@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/RegistrationPageStyle.css') }}">
+</head>
+<body>
+    <section>
+        <div class="signin">
+            <div class="content">
+                <h1 style="margin-bottom: 15px;">Регистрация</h1>
+                <div class="links">
+                    <p>Есть аккаунт?
+                        <a href="/login">Войти</a>
+                    </p>
+                </div>
+                <div class="separator">
+                    <div class="line"></div>
+                    <span style="color: #777373;">Или</span>
+                    <div class="line"></div>
+                  </div>
+                  {% if error %}
+                  <p style="color: red;text-align: center;">{{ error }}</p>
+                  {% endif %}                         
+                <div class="form">
+                    <form method="POST">
+                        <div class="inputBox">
+                            <input type="text" id="username" name="username" required><i>Логин</i><br>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="name" name="name" required><i>ФИО</i><br>
+                        </div>
+                        <div class="inputBox">
+                            <input type="email" id="email" name="email" required><i>Почта</i><br>
+                        </div>
+                        <div class="inputBox">
+                            <input type="password" id="password" name="password" required><i>Пароль</i><br>
+                        </div>
+                        <div class="inputBox">
+                            <input style="border-radius: 15px;" type="submit" name="register" value="Зарегистрироваться">
+                        </div>
+                    </form>
+                    <div class="links">
+                        <a style="text-decoration: underline;color: rgb(138, 138, 138);" href="/">На главную</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

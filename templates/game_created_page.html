@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание {{task_number}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/ConstructionStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Конструктор</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">На главную</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="creation">
+            <div class="content">
+                <form method="post">
+                    <h2>Тест успешно создан!</h2>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

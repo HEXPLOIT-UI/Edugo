@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать страницу с заданиями</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/ConstructionStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                 alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Конструктор</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">Удалить</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="creation">
+            <div class="content">
+                <h1>Создание нового теста</h1>
+                <div class="form">
+                    <form method="POST">
+                        <div class="title-box">
+                            <label for="page_title">Название</label>
+                            <input type="text" name="page_title" required><br>
+                        </div>
+                        <div class="end-box">
+                            <input mode="button" type="submit" style="background: #fff;color: black;" value="Добавить задания">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

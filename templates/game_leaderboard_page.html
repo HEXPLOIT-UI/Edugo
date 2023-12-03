@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лидеры - {{game_name}}</title>
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/LeaderboardStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Лидеры теста {{game_name}}</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">Выйти</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="leaderboard">
+            <div class="content">
+                <table class="table">
+                    <tr>
+                      <th>Место</th>
+                      <th>Ученик</th>
+                      <th>Результат</th>
+                      <th>Время выполнения</th>
+                      {% if permission %}
+                        <th>Управление</th>
+                      {% endif %}
+                    </tr>
+                    {% for user in leaderboard %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.score }}</td>
+                        <td>{{ user.time }}</td>
+                        {% if permission %}
+                            <td><a href="/play/{{code}}/check/{{ user.login }}">Подробнее</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                  </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

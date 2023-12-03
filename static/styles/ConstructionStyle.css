@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@600&family=Nunito+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*
+{
+  box-sizing: border-box;
+  font-family: "Overpass", sans-serif;
+}
+section 
+{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+section .creation {
+    top: 8%;
+    position: absolute;
+    width: 60%;
+    background: #fff;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px #d8d7d7;
+}
+
+section .creation .content 
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+section .creation .content .form 
+{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+section .creation .content .title-box 
+{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input[type="text"] {
+  width: 80%;
+  background: #e7e7e7;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+input[type="checkboxlabel"] {
+  width: 80%;
+  background: #e7e7e7;
+  color: black;
+  border: none;
+  outline: none;
+  padding: 6px 14px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 1em;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+input[mode="button"] {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0079eb;
+  background: #0079eb;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+input[mode="button"]:hover {
+  transform: translateY(0px);
+  box-shadow: 0px 5px 10px #91b6d8;
+}
+
+section .creation .content .end-box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[mode="button"] {
+  margin: 2px;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #0079eb;
+  background: #0079eb;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+button[mode="button"]:hover {
+  transform: translateY(0px);
+  box-shadow: 0px 5px 10px #91b6d8;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1; 
+  display: none;
+}
+
+section .creation .content .quiz-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+section .creation .content .quiz-box .quiz-button {
+  padding: 20px;
+  text-align: center;
+  background-color: #0079eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label {
+  margin-right: 10px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+}
+
+.input-label {
+  flex: 1;
+}
+
+section .creation .content .form .buttonBox {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}

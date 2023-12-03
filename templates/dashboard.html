@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edugo - Дашбоард</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/DashboardStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="section-left">
+        <a  href="/">
+          <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+          alt="logo" style="height: 50px;">
+        </a>
+    </div>
+    <div class="section-center">
+      <div class="box-invite-code">
+        <input id="codeInputField" type="invite-code" maxlength="10" placeholder="Введите код">
+        <button id="joinButton" type="join">Присоединиться</button>
+      </div>
+    </div>
+    <div class="section-right">
+        <div class="semi-bold">
+            <a style="top: 6px;" type="button" href="/profile">Профиль</a>
+            <a style="top: 6px;" type="button" href="/logout">Выйти</a>
+        </div>
+    </div>
+</header>       
+  <div class="border-line"></div> 
+  <section>
+    <div class="block">
+      <p>Добро пожаловать, {{username}}!</p>
+      <p style="color: #e2e0e0;font-weight: 100;font-size: 15px;">PTB</p>
+    </div>
+    {% if permission %}
+    <div class="block">
+      <a type="button" href="/create_page">Создать страницу с заданиями</a><br><br>
+      <a type="button" href="/my_games">Мои игры</a>
+    </div>
+    {% endif %}
+  </section>
+  <script>
+    const joinButton = document.getElementById("joinButton");
+    const codeInputField = document.getElementById("codeInputField");
+      joinButton.addEventListener("click", function() {
+        const value = codeInputField.value;
+        const url = "http://127.0.0.1:5000/play/" + value;
+        if(value && value.length == 6) {
+          window.location.href = url;
+        }
+      });
+  </script>
+</body>
+</html>

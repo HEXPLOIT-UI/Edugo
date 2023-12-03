@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра - {{ game_title }}</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/GameStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                 alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Результат теста {{game_title}}</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">Выйти</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="game">
+            <div class="content">
+                <div class="form">
+                    <form method="POST">
+                        <p>Ваши результаты:</p><br>
+                            {% for item in results %}
+                                <p>Задание № {{ loop.index }}</p>
+                                <div class="imageBox">
+                                    {% if item.image %}
+                                        <img style="height: 200px;" src="{{ url_for('request_listener.display_file', filename=item.image) }}" alt="">
+                                    {% endif %}
+                                </div>
+                                {% if item.task_type == 'tests' %}
+                                    <p>Вопрос: {{ item.name }}</p>
+                                    <p>Ваш ответ:</p><p style="color: {% if item.correct %}green{% else %}red{% endif %};">{{ item.user_answer }}</p>
+                                    {% if not item.correct %}<p>(Правильный ответ: {{ item.correct_answer }})</p><br>{% else %}<br>{% endif %}
+                                {% endif %}
+                                {% if item.task_type == 'quizz' %}
+                                    <p>Вопрос: {{ item.name }}</p>
+                                    <p>Ваш ответ:</p><p style="color: {% if item.correct %}green{% else %}red{% endif %};">{{ item.user_answer }}</p>
+                                    {% if not item.correct %}<p>(Правильный ответ: {{ item.correct_answer }})</p><br>{% endif %}
+                                {% endif %}
+                                {% if item.task_type == 'checkboxs' %}
+                                    <p>Вопрос: {{ item.name }}</p>
+                                    <p>Ваш ответ:</p><p style="color: {% if item.correct %}green{% else %}red{% endif %};">{{ item.user_answer }}</p>
+                                    {% if not item.correct %}<p>(Правильный ответ: {{ item.correct_answer }})</p><br>{% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        <div class="buttonBox" style="text-align: center;"><button type="submit" name="leaderboardb" value="pressed">Показать таблицу лидеров</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

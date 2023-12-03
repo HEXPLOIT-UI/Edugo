@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра - {{ game_title }}</title>
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/GameStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+    <div class="section-left">
+        <a  href="/">
+            <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+            alt="logo" style="height: 50px;">
+        </a>
+    </div>
+    <div class="section">
+        <label style="font-weight: bolder;" type="current-code">Игра {{ game_title}}</label>
+    </div>
+    <div class="section-right">
+        <div class="semi-bold">
+            <a style="top: 6px;" type="button" href="/">Выйти</a>
+        </div>
+    </div>
+</header> 
+<div class="border-line"></div> 
+<section>
+    <div class="game">
+        <div class="content">
+            <div class="form">
+                <form method="post">
+                    <div class="labelBox"><p mode="title">Вы подключились к тесту {{ game_title}}</p></div><br><br><br>
+                    {% if permission %}
+                    <div class="buttonBox" style="text-align: center;"><button type="submit" name="checkb" value="pressed">Посмотреть результаты</button></div>
+                    {% else %}
+                        <div class="buttonBox" style="text-align: center;"><button type="submit" name="playb" value="pressed">Начать тест</button></div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

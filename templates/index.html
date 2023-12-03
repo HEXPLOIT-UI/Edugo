@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edugo - Главная</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section-center">
+            <div class="bold">
+                <a type="link">Информация о нас</a>
+                <a type="link">Тарифы</a>
+                <a type="link">Контакты</a>
+            </div>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a type="button" href="/login">Войти</a>
+                <a type="button" href="/register">Зарегистрироваться</a>
+            </div>
+        </div>
+    </header>       
+    <div class="border-line"></div> 
+    <div class="container">
+        <div class="box">
+            <h2>Вопрос-ответ</h2>
+            <img src="{{ url_for('static', filename='/images/example-test-answer.png') }}"
+                alt="logo" style="margin-bottom: 30%;height: 475px;">
+        </div>
+        <div class="box">
+            <h2>Квиз</h2>
+            <img class="img" src="{{ url_for('static', filename='/images/example-quizz.png') }}"
+                alt="logo" style="height: 450px;">
+        </div>
+        <div class="box">
+            <h2>Тесты</h2>
+            <img class="img" src="{{ url_for('static', filename='/images/example-checkbox.png') }}"
+                alt="logo" style="height: 450px;right: 70%;top: 10%;">
+        </div>
+    </div>
+</body>
+</html>

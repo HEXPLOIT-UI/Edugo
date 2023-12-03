@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edugo - Профиль</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/DashboardStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <div class="section-left">
+        <a  href="/">
+          <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+          alt="logo" style="height: 50px;">
+        </a>
+    </div>
+    <div class="section">
+        <label style="font-weight: bolder;" type="current-code">Профиль</label>
+    </div>
+    <div class="section-right">
+        <div class="semi-bold">
+            <a style="top: 6px;" type="button" href="/">Назад</a>
+            <a style="top: 6px;" type="button" href="/logout">Выйти</a>
+        </div>
+    </div>
+</header>       
+  <div class="border-line"></div> 
+  <section>
+    <div class="block">
+      <p>Ваш профиль</p>
+      <form method="post">
+        <p style="font-size: medium;">Имя:
+          <input type="text" name="username-field" required value="{{username}}">
+        </p>
+        <p style="font-size: medium;">Пароль:
+          <input type="password" name="password-field" required value="{{password}}">
+        </p>
+        <button type="submit">Сохранить</a>
+      </form> 
+    </div>
+  </section>
+</body>
+</html>

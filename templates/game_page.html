@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ game_title }}</title>
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/GameStyle.css') }}">
+    <link rel="stylesheet" type="text/css" 
+    href="{{ url_for('static', filename='/styles/MainPageStyle.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="section-left">
+            <a  href="/">
+                <img src="{{ url_for('static', filename='/images/edugo-logo.png') }}"
+                alt="logo" style="height: 50px;">
+            </a>
+        </div>
+        <div class="section">
+            <label style="font-weight: bolder;" type="current-code">Тест {{ game_title}}</label>
+        </div>
+        <div class="section-right">
+            <div class="semi-bold">
+                <a style="top: 6px;" type="button" href="/">Выйти</a>
+            </div>
+        </div>
+    </header> 
+    <div class="border-line"></div> 
+    <section>
+        <div class="game">
+            <div class="content">
+                <div class="form">
+                    <form method="POST">
+                        <div class="labelBox"><p>Вопрос №{{task_number}}</p><br></div>
+                        <div class="imageBox">
+                            {% if image_link %}
+                                <img src="{{ url_for('request_listener.display_file', filename=image_link) }}" alt="">
+                            {% endif %}
+                        </div><br>
+                        <div class="labelBox"><p>{{question}}</p></div>
+                        {% if task_type == "tests" %}
+                            <div class="inputBox"><br><input type="text" name="answer_field" required autocomplete="off"></div><br>
+                        {% endif %}
+                        {% if task_type == "quizz" %}
+                            <br><div class="quiz-box">
+                                {% for answer in answers %}
+                                    <button type="reset" class="quiz-button" id="{{answer.id}}">{{answer.name}}</button>
+                                {% endfor %}
+                            </div>
+                            <br><br>
+                        {% endif %}
+                        {% if task_type == "checkboxs" %}
+                            <br><div class="checkboxs-box">
+                                {% for answer in answers %}
+                                    <label>
+                                        <input class="checkbox-button" type="checkbox" id="{{answer.id}}" name="{{answer.name}}">
+                                        {{answer.name}}
+                                    </label>
+                                {% endfor %}
+                            </div>
+                            <br><br>
+                        {% endif %}
+                        <div class="buttonBox"><button type="submit" id="sendanswerb" name="sendanswerb" value="None">Отправить</button></div><br><br><br>
+                        <div class="labelBox"><p mode="caption">За выполнение этого задания вы получите {{score}} баллов</p></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const buttons = document.querySelectorAll('.quiz-button');
+        let answer = document.getElementById('sendanswerb');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                answer.setAttribute('value', button.id)
+                buttons.forEach(btn => {
+                    btn.classList.remove('quiz-button-selected');
+                });
+                button.classList.add('quiz-button-selected');
+            });
+        });
+    </script>
+    <script>
+        const checkboxs = document.querySelectorAll('.checkbox-button');
+        let answers = document.getElementById('sendanswerb');
+        let list = [];
+
+        checkboxs.forEach(checkbox => {
+            checkbox.addEventListener('click', () => {
+                if (checkbox.checked) {
+                    list.push(checkbox.id);
+                } else {
+                    removeId(checkbox.id);
+                }
+                answer.setAttribute('value', list);
+            });
+        });
+
+        function removeId(item) {
+            const index = list.indexOf(item);
+            if (index !== -1) {
+                list.splice(index, 1);
+            }
+        }
+    </script>
+</body>
+</html>
